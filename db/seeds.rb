@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 COMPANY_NAMES.each do |company|
-  Company.find_or_create_by(name: company[:name], symbool: company[:symbol])
+  Company.find_or_create_by(name: company[:name], symbol: company[:symbol])
 end

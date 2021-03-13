@@ -1,4 +1,4 @@
-symbol	timestamp	price
+symbol	value_at	price
 AAPL	1601551740	117.451
 AAPL	1601552100	117.451
 AAPL	1601552160	117.451
