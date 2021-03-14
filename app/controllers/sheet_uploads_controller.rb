@@ -1,5 +1,7 @@
 class SheetUploadsController < ApplicationController
 
+  # uploads sheet from UI with company id, sidekiq job will process the sheet pload part.
+  # before going to process the sheet, we should check the headers first. That is not implemeted yet
   def create
     sheet_upload = SheetUpload.new(sheet_params)
     if sheet_upload.save

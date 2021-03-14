@@ -7,6 +7,8 @@ class SheetProcessingJob < ApplicationJob
     if import_service.errors.present?
       # you can update import is failed.
       # we need to add is_success attribute in sheet_uploads table
+      # we can show such failed sheet on admin ui with errors.
+      # so that he can check the error and upload that sheet again.
     end
   end
 end

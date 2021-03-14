@@ -1,7 +1,9 @@
 class TimeSeries < ApplicationRecord
   belongs_to :company
 
-
+  # method will return data in the both cases hours and daily
+  # we can split this method into two different methods.
+  # we can remove the while logic in differnt method.
   def self.get_graph_data(graph_params)
     company = Company.find_by(symbol: graph_params[:symbol])
     first_timestamp = company.time_series.first.value_at
