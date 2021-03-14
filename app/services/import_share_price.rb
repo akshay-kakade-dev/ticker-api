@@ -4,6 +4,7 @@ class ImportSharePrice
   def initialize(company_id, object_key)
     @object_key = object_key
     @company_id = company_id
+    @errors = []
   end
 
   def import
@@ -19,5 +20,7 @@ class ImportSharePrice
     end
     @share_data.sort_by! {|share_data| share_data[:value_at]}
     TimeSeries.insert_all!(@share_data)
+  rescue => e
+    @errors.push(e.message)
   end
 end
