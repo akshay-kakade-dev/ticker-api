@@ -1,4 +1,4 @@
-symbol	timestamp	price
+symbol	value_at	price
 AMZN	1601555760	3196.06
 AMZN	1601557500	3202.51
 AMZN	1601559000	3207.03

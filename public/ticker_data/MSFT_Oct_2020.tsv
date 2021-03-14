@@ -1,4 +1,4 @@
-symbol	timestamp	price
+symbol	value_at	price
 MSFT	1601550000	212.56
 MSFT	1601555100	213.02
 MSFT	1601555400	213
