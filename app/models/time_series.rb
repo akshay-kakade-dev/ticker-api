@@ -15,9 +15,13 @@ class TimeSeries < ApplicationRecord
 
     while(records.present? || last_timestamp < end_timestamp)
       if records.present?
-        time_range = "#{first_timestamp.strftime("%D")} - #{last_timestamp.strftime("%D")}"
+        if time_duration == 1.day
+          time_range = "#{first_timestamp.strftime("%D")} - #{last_timestamp.strftime("%D")}"
+        else
+          time_range = "#{first_timestamp.strftime("%D %H:%m")} - #{last_timestamp.strftime("%D %H:%m")}"
+        end
         average = records.average(:price)
-        data.push({x: time_range, y: average})
+        data.push({x: time_range, price: average})
       end
       first_timestamp = last_timestamp
       last_timestamp = first_timestamp + time_duration
