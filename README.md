@@ -45,3 +45,13 @@ Things you may want to cover:
 
 * localhost:3000/share_chart?symbol=MSFT&display_type=hours
 * localhost:3000/share_chart?symbol=MSFT&display_type=days
+
+# If you have to support 100x the volume of data what would you change in the architecture, schema etc ?
+
+* I will change the schema as following.
+* I wil have date table, date will have many time_series and time_series will belongs_to company. I will calculate daily and hourly avarage and store it in the database. So that we don't need to compute avarages again.
+
+# How will you support realtime ingestion of a data feed of ticker data ?
+
+* I haven't explored this much. I need to study it first. But we need to perform polling here to get the latest data from the server. To avoid querying past data (from the morning for that market day) in the database we can store this data into cache aslo. So just fetch the cached data
+
